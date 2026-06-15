@@ -236,7 +236,7 @@ export function App() {
                   <span className={"verdict " + v}>{v || "—"}</span>
                   <span className="num">{Number.isFinite(result.score) ? result.score : "--"}<small>/100</small></span>
                 </div>
-                <div className="track"><span className={"bar " + v} style={{ width: Math.max(3, Math.min(100, result.score)) + "%" }} /></div>
+                <div className="track"><span className={"bar " + v} style={{ width: Math.min(100, Math.max(0, result.score || 0)) + "%" }} /></div>
                 <p className="say">{result.summary}</p>
                 <span className="saved">Saved on-chain · {cid}</span>
               </div>
